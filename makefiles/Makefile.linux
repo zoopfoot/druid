@@ -12,7 +12,7 @@ HOST_TARGET ?= NA
 
 BOOST_LIBSUFFIX ?= -mt
 
-SERIALUI_CXXFLAGS ?=  -I../SerialUI/includes
+SERIALUI_CXXFLAGS ?=  -I../SerialUI/src/includes -I/usr/lib/avr/include -I/usr/share/arduino/hardware/arduino/cores/arduino -I/usr/share/arduino/hardware/arduino/variants/standard
 SERIALUI_LDFLAGS ?= 
 
 EXENAME	:= druid4arduino
