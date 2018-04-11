@@ -27,6 +27,12 @@ To compile this program, you'll need to have a number of dependencies installed.
 	* WxWidgets (http://www.wxwidgets.org/)
 	* The SerialUI source code (http://flyingcarsandstuff.com/projects/serialui/)
 
+On Ubuntu 16.04 you'll need:
+
+sudo apt-get install libboost-thread-dev libwxgtk3.0-dev libtiff5-dev arduino
+
+Though these are yet to be proven to work. YMMV.
+
 You'll probably be able to get the first two as pre-compiled packages, for your Linux distro, though I had some trouble getting things working with CygWin under Windows (got it working under linux though, which is how I compiled the Win versions--see http://flyingcarsandstuff.com/2013/03/adventures-of-a-linux-guy-building-windows-programs/)
 
 The makefile is configured to search for the SerialUI includes in the same parent directory as the source you're building here (in ../SerialUI/includes) -- you can dump the source there, or change the makefile.
