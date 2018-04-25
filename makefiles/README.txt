@@ -15,7 +15,8 @@ to build the program.
 
 *** LINUX ***
 
-If you are under Linux, it's simply a matter of running
+If you are under Linux, it's simply a matter of running (No, its not see
+below)
 
 $ make -f makefiles/Makefile.linux
 
@@ -25,6 +26,28 @@ If you want to cross-compile, under Linux, for Windows see
 	http://flyingcarsandstuff.com/2013/03/adventures-of-a-linux-guy-building-windows-programs/
 and use the appropriate makefile.
 
+Debian Stretch and possibly other more recent distros (2018)
+(There are multiple and probably better ways of doing the following)
+
+Create a symlink for the Arduino libraries  in /usr/include
+ln -s /usr/lib/avr/include/avr /usr/include/avr
+comment out these macro defs at about line 72 of /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h
+//#define min(a,b) ((a)<(b)?(a):(b))
+#define max(a,b) ((a)>(b)?(a):(b))
+//#define abs(x) ((x)>0?(x):-(x))
+
+Modify this #def at about line 87 of /usr/include/avr/pgmspace.h:
+
+//#include <inttypes.h>				<==COMMENT OUT
+#include "/usr/lib/avr/include/inttypes.h"      <==ADD
+
+(otherwise it picks the wrong include file)
+
+You also need to switch to a specific older version of SerialUI.
+git checkout master (default is ver2)
+git reset --hard 23aa480d14ee72cd92139dad59cf2018466fd84c
+
+Now make should work.
 
 *** Windows ***
 

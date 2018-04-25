@@ -27,7 +27,7 @@ namespace DRUID {
 
 #ifdef PLATFORM_LINUX
 #define DEF_WIN_WIDTH	750
-#define DEF_WIN_HEIGHT	565
+#define DEF_WIN_HEIGHT	850
 #else
 #define DEF_WIN_WIDTH	770
 #define DEF_WIN_HEIGHT	630

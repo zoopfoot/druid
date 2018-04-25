@@ -84,7 +84,7 @@ InputPanel::InputPanel(wxWindow *parent, InputPanelReceiver * receiver) : wxPane
 	btn->SetForegroundColour(darkFg);
 	btn->SetMinSize(btnMinSize);
 	btn->SetMaxSize(btnMaxSize);
-	topsizer->Add(btn, wxSizerFlags(2).Align(wxALIGN_CENTER_HORIZONTAL | wxALIGN_TOP).Border(wxALL, 5));
+	topsizer->Add(btn, wxSizerFlags(-1).Align(wxALIGN_CENTER_HORIZONTAL | wxALIGN_TOP).Border(wxALL, 5));
 
 
 	wxStaticText * spacerTxt = new wxStaticText(this, wxID_ANY, wxT(""));
